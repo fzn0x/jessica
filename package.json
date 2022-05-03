@@ -3,9 +3,8 @@
   "version": "0.0.1",
   "description": "Jessica - Jest with HTTP request utilities",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cat package.build.json >> ./build/package.json",
     "test": "node --experimental-vm-modules ./build/jessica.js --passWithNoTests"
   },
   "keywords": [
