@@ -6,7 +6,7 @@ test.fetchJson = async (
     fn: (...args: unknown[]) => void,
     timeout?: number,
 ) => {
-    return test.each([fetch(url, initConfig).then(res => res.json())])(url, fn, timeout);
+    await test.each([fetch(url, initConfig).then(res => res.json())])(url, fn, timeout);
 }
 
 test.fetchText = async (
@@ -15,5 +15,5 @@ test.fetchText = async (
     fn: (...args: unknown[]) => void,
     timeout?: number,
 ) => {
-    return test.each([fetch(url, initConfig).then(res => res.text())])(url, fn, timeout);
+    await test.each([fetch(url, initConfig).then(res => res.text())])(url, fn, timeout);
 }
