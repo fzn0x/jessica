@@ -1,0 +1,29 @@
+{
+  "ts-node": {
+    "transpileOnly": true,
+    "moduleTypes": {
+      "webpack.config.ts": "mjs",
+      // Globs are also supported with the same behavior as tsconfig "include"
+      "webpack-config-scripts/**/*": "mjs"
+    }
+  },
+  "compilerOptions": {
+    "target": "ES2020",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "build",
+    "module": "esnext",
+    "moduleResolution": "node"
+  },
+  "include": [
+    "jest.setup.ts",
+    "jessica.ts",
+    "jest.d.ts"
+  ],
+  "exclude": [
+    "tests",
+    "node_modules"
+  ]
+}

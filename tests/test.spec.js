@@ -1,0 +1,296 @@
+describe("my test suite", () => {
+    it.fetchJson("https://raw.githubusercontent.com/sequelize/sequelize/main/package.json", {}, async (json) => {
+        expect(await json).toStrictEqual(
+            {
+                "name": "@sequelize/core",
+                "description": "Sequelize is a promise-based Node.js ORM tool for Postgres, MySQL, MariaDB, SQLite, Microsoft SQL Server, Amazon Redshift, Snowflake’s Data Cloud, Db2, and IBM i. It features solid transaction support, relations, eager and lazy loading, read replication and more.",
+                "version": "0.0.0-development",
+                "funding": [
+                    {
+                        "type": "opencollective",
+                        "url": "https://opencollective.com/sequelize"
+                    }
+                ],
+                "repository": {
+                    "type": "git",
+                    "url": "https://github.com/sequelize/sequelize.git"
+                },
+                "bugs": {
+                    "url": "https://github.com/sequelize/sequelize/issues"
+                },
+                "homepage": "https://sequelize.org/",
+                "main": "./lib/index.js",
+                "types": "./types",
+                "type": "commonjs",
+                "exports": {
+                    ".": {
+                        "import": "./lib/index.mjs",
+                        "require": "./lib/index.js"
+                    },
+                    "./_non-semver-use-at-your-own-risk_/*": "./lib/*",
+                    "./package.json": "./package.json"
+                },
+                "engines": {
+                    "node": "^14.17.0 || >=16.0.0"
+                },
+                "files": [
+                    "lib",
+                    "types",
+                    "index.js"
+                ],
+                "license": "MIT",
+                "dependencies": {
+                    "@types/debug": "^4.1.7",
+                    "@types/inflection": "^1.13.0",
+                    "@types/validator": "^13.7.1",
+                    "debug": "^4.3.3",
+                    "dottie": "^2.0.2",
+                    "inflection": "^1.13.2",
+                    "lodash": "^4.17.21",
+                    "moment": "^2.29.1",
+                    "moment-timezone": "^0.5.34",
+                    "pg-connection-string": "^2.5.0",
+                    "retry-as-promised": "^5.0.0",
+                    "semver": "^7.3.5",
+                    "sequelize-pool": "^7.1.0",
+                    "toposort-class": "^1.0.1",
+                    "uuid": "^8.3.2",
+                    "validator": "^13.7.0",
+                    "wkx": "^0.5.0"
+                },
+                "devDependencies": {
+                    "@commitlint/cli": "16.2.4",
+                    "@commitlint/config-angular": "16.2.4",
+                    "@ephys/eslint-config-typescript": "17.0.0",
+                    "@rushstack/eslint-patch": "1.1.3",
+                    "@types/chai": "4.3.1",
+                    "@types/chai-as-promised": "7.1.5",
+                    "@types/chai-datetime": "0.0.37",
+                    "@types/lodash": "4.14.182",
+                    "@types/mocha": "9.1.1",
+                    "@types/node": "16.11.33",
+                    "@types/sinon": "10.0.11",
+                    "@types/sinon-chai": "3.2.8",
+                    "@types/uuid": "8.3.4",
+                    "chai": "4.3.6",
+                    "chai-as-promised": "7.1.1",
+                    "chai-datetime": "1.8.0",
+                    "cheerio": "1.0.0-rc.10",
+                    "cls-hooked": "4.2.2",
+                    "copyfiles": "2.4.1",
+                    "cross-env": "7.0.3",
+                    "delay": "5.0.0",
+                    "esbuild": "0.14.38",
+                    "eslint": "8.14.0",
+                    "eslint-plugin-jsdoc": "39.2.9",
+                    "eslint-plugin-mocha": "10.0.4",
+                    "expect-type": "0.13.0",
+                    "fast-glob": "3.2.11",
+                    "fs-jetpack": "4.3.1",
+                    "husky": "7.0.4",
+                    "ibm_db": "2.8.1",
+                    "lcov-result-merger": "3.1.0",
+                    "lint-staged": "12.4.1",
+                    "mariadb": "2.5.6",
+                    "markdownlint-cli": "0.31.1",
+                    "mocha": "10.0.0",
+                    "module-alias": "2.2.2",
+                    "mysql2": "2.3.3",
+                    "node-hook": "1.0.0",
+                    "nyc": "15.1.0",
+                    "odbc": "2.4.4",
+                    "p-map": "4.0.0",
+                    "p-props": "4.0.0",
+                    "p-settle": "4.1.1",
+                    "p-timeout": "4.1.0",
+                    "pg": "8.7.3",
+                    "pg-hstore": "2.3.4",
+                    "rimraf": "3.0.2",
+                    "semantic-release": "19.0.2",
+                    "semantic-release-fail-on-major-bump": "1.0.0",
+                    "sinon": "13.0.2",
+                    "sinon-chai": "3.7.0",
+                    "snowflake-sdk": "1.6.9",
+                    "source-map-support": "0.5.21",
+                    "sqlite3": "5.0.6",
+                    "tedious": "14.4.0",
+                    "typedoc": "0.22.15",
+                    "typescript": "4.6.4"
+                },
+                "peerDependenciesMeta": {
+                    "pg": {
+                        "optional": true
+                    },
+                    "pg-hstore": {
+                        "optional": true
+                    },
+                    "mysql2": {
+                        "optional": true
+                    },
+                    "ibm_db": {
+                        "optional": true
+                    },
+                    "odbc": {
+                        "optional": true
+                    },
+                    "snowflake-sdk": {
+                        "optional": true
+                    },
+                    "mariadb": {
+                        "optional": true
+                    },
+                    "sqlite3": {
+                        "optional": true
+                    },
+                    "tedious": {
+                        "optional": true
+                    }
+                },
+                "keywords": [
+                    "mysql",
+                    "mariadb",
+                    "sqlite",
+                    "postgresql",
+                    "postgres",
+                    "pg",
+                    "mssql",
+                    "db2",
+                    "ibm_db",
+                    "sql",
+                    "sqlserver",
+                    "snowflake",
+                    "orm",
+                    "nodejs",
+                    "object relational mapper",
+                    "database",
+                    "db"
+                ],
+                "commitlint": {
+                    "extends": [
+                        "@commitlint/config-angular"
+                    ],
+                    "rules": {
+                        "type-enum": [
+                            2,
+                            "always",
+                            [
+                                "build",
+                                "ci",
+                                "docs",
+                                "feat",
+                                "fix",
+                                "perf",
+                                "refactor",
+                                "revert",
+                                "style",
+                                "test",
+                                "meta"
+                            ]
+                        ]
+                    }
+                },
+                "lint-staged": {
+                    "*.{js,mjs,cjs,ts,mts,cts}": "eslint --fix --report-unused-disable-directives"
+                },
+                "release": {
+                    "plugins": [
+                        "@semantic-release/commit-analyzer",
+                        "@semantic-release/release-notes-generator",
+                        "@semantic-release/npm",
+                        "@semantic-release/github"
+                    ],
+                    "branches": [
+                        "v6",
+                        {
+                            "name": "v7",
+                            "prerelease": "alpha"
+                        }
+                    ]
+                },
+                "publishConfig": {
+                    "access": "public",
+                    "tag": "alpha"
+                },
+                "scripts": {
+                    "----------------------------------------- static analysis -----------------------------------------": "",
+                    "lint": "eslint . --fix --report-unused-disable-directives",
+                    "lint-no-fix": "eslint . --quiet --report-unused-disable-directives",
+                    "test-typings": "tsc --noEmit --emitDeclarationOnly false && tsc -b test/tsconfig.json",
+                    "----------------------------------------- documentation -------------------------------------------": "",
+                    "docs": "typedoc",
+                    "----------------------------------------- tests ---------------------------------------------------": "",
+                    "mocha": "mocha -r ./test/registerEsbuild",
+                    "test-unit": "yarn mocha \"test/unit/**/*.test.[tj]s\"",
+                    "test-integration": "yarn mocha \"test/integration/**/*.test.[tj]s\"",
+                    "test-smoke": "yarn mocha \"test/smoke/**/*.test.[tj]s\" --timeout 600000",
+                    "teaser": "node test/teaser.js",
+                    "test": "yarn prepare && yarn test-typings && yarn teaser && yarn test-unit && yarn test-integration",
+                    "----------------------------------------- coverage ------------------------------------------------": "",
+                    "cover": "rimraf coverage && yarn teaser && yarn cover-integration && yarn cover-unit && yarn merge-coverage",
+                    "cover-integration": "cross-env COVERAGE=true nyc --reporter=lcovonly yarn mocha \"test/integration/**/*.test.[tj]s\" && node -e \"require('fs').renameSync('coverage/lcov.info', 'coverage/integration.info')\"",
+                    "cover-unit": "cross-env COVERAGE=true nyc --reporter=lcovonly yarn mocha \"test/unit/**/*.test.[tj]s\" && node -e \"require('fs').renameSync('coverage/lcov.info', 'coverage/unit.info')\"",
+                    "merge-coverage": "lcov-result-merger \"coverage/*.info\" \"coverage/lcov.info\"",
+                    "----------------------------------------- local test dbs ------------------------------------------": "",
+                    "start-mariadb": "bash dev/mariadb/10.3/start.sh",
+                    "start-mysql": "bash dev/mysql/5.7/start.sh",
+                    "start-mysql-8": "bash dev/mysql/8.0/start.sh",
+                    "start-postgres": "bash dev/postgres/10/start.sh",
+                    "start-mssql": "bash dev/mssql/2019/start.sh",
+                    "start-db2": "bash dev/db2/11.5/start.sh",
+                    "stop-mariadb": "bash dev/mariadb/10.3/stop.sh",
+                    "stop-mysql": "bash dev/mysql/5.7/stop.sh",
+                    "stop-mysql-8": "bash dev/mysql/8.0/stop.sh",
+                    "stop-postgres": "bash dev/postgres/10/stop.sh",
+                    "stop-mssql": "bash dev/mssql/2019/stop.sh",
+                    "stop-db2": "bash dev/db2/11.5/stop.sh",
+                    "restart-mariadb": "yarn start-mariadb",
+                    "restart-mysql": "yarn start-mysql",
+                    "restart-postgres": "yarn start-postgres",
+                    "restart-mssql": "yarn start-mssql",
+                    "restart-db2": "yarn start-db2",
+                    "----------------------------------------- local tests ---------------------------------------------": "",
+                    "test-unit-mariadb": "cross-env DIALECT=mariadb yarn test-unit",
+                    "test-unit-mysql": "cross-env DIALECT=mysql yarn test-unit",
+                    "test-unit-postgres": "cross-env DIALECT=postgres yarn test-unit",
+                    "test-unit-postgres-native": "cross-env DIALECT=postgres-native yarn test-unit",
+                    "test-unit-sqlite": "cross-env DIALECT=sqlite yarn test-unit",
+                    "test-unit-mssql": "cross-env DIALECT=mssql yarn test-unit",
+                    "test-unit-db2": "cross-env DIALECT=db2 yarn test-unit",
+                    "test-unit-ibmi": "cross-env DIALECT=ibmi yarn test-unit",
+                    "test-unit-snowflake": "cross-env DIALECT=snowflake yarn test-unit",
+                    "test-unit-all": "yarn test-unit-mariadb && yarn test-unit-mysql && yarn test-unit-postgres && yarn test-unit-postgres-native && yarn test-unit-mssql && yarn test-unit-sqlite && yarn test-unit-snowflake && yarn test-unit-db2 && yarn test-unit-ibmi",
+                    "test-integration-mariadb": "cross-env DIALECT=mariadb yarn test-integration",
+                    "test-integration-mysql": "cross-env DIALECT=mysql yarn test-integration",
+                    "test-integration-postgres": "cross-env DIALECT=postgres yarn test-integration",
+                    "test-integration-postgres-native": "cross-env DIALECT=postgres-native yarn test-integration",
+                    "test-integration-sqlite": "cross-env DIALECT=sqlite yarn test-integration",
+                    "test-integration-mssql": "cross-env DIALECT=mssql yarn test-integration",
+                    "test-integration-db2": "cross-env DIALECT=db2 yarn test-integration",
+                    "test-integration-ibmi": "cross-env DIALECT=ibmi yarn test-integration",
+                    "test-integration-snowflake": "cross-env DIALECT=snowflake yarn test-integration",
+                    "test-mariadb": "cross-env DIALECT=mariadb yarn test",
+                    "test-mysql": "cross-env DIALECT=mysql yarn test",
+                    "test-sqlite": "cross-env DIALECT=sqlite yarn test",
+                    "test-postgres": "cross-env DIALECT=postgres yarn test",
+                    "test-postgres-native": "cross-env DIALECT=postgres-native yarn test",
+                    "test-mssql": "cross-env DIALECT=mssql yarn test",
+                    "test-db2": "cross-env DIALECT=db2 yarn test",
+                    "test-ibmi": "cross-env DIALECT=ibmi yarn test",
+                    "----------------------------------------- development ---------------------------------------------": "",
+                    "fix-commit": "export TMPFILE=$(mktemp) && grep -v '^#' $(git rev-parse --git-dir)/COMMIT_EDITMSG > $TMPFILE && git commit -e -F $TMPFILE",
+                    "sscce": "node sscce.js",
+                    "sscce-mariadb": "cross-env DIALECT=mariadb node sscce.js",
+                    "sscce-mysql": "cross-env DIALECT=mysql node sscce.js",
+                    "sscce-postgres": "cross-env DIALECT=postgres node sscce.js",
+                    "sscce-postgres-native": "cross-env DIALECT=postgres-native node sscce.js",
+                    "sscce-sqlite": "cross-env DIALECT=sqlite node sscce.js",
+                    "sscce-mssql": "cross-env DIALECT=mssql node sscce.js",
+                    "sscce-db2": "cross-env DIALECT=db2 node sscce.js",
+                    "prepare": "yarn build && husky install",
+                    "build": "node ./build.js",
+                    "---------------------------------------------------------------------------------------------------": ""
+                },
+                "support": true
+            })
+    })
+});
